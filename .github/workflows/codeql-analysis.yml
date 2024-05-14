@@ -80,7 +80,7 @@ jobs:
       uses: foundry-rs/foundry-toolchain@v1
 
     - name: Cache Rust Build Products
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: |
           ~/.cargo/registry/
@@ -94,13 +94,13 @@ jobs:
 
     - name: Cache wabt build
       id: cache-wabt
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ~/wabt-prefix
         key: ${{ runner.os }}-wabt-codeql-${{ env.WABT_VERSION }}
 
     - name: Cache cbrotli
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       id: cache-cbrotli
       with:
         path: |
@@ -117,7 +117,7 @@ jobs:
       run: ./scripts/build-brotli.sh -l
 
     - name: Cache Build Products
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: |
           ~/go/pkg/mod

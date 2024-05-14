@@ -84,7 +84,7 @@ jobs:
           components: 'rust-src, rustfmt, clippy'
 
       - name: Cache Rust intermediate build products
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ~/.cargo/bin/
@@ -100,7 +100,7 @@ jobs:
 
       - name: Cache wabt build
         id: cache-wabt
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/wabt-prefix
           key: ${{ runner.os }}-wabt-${{ env.WABT_VERSION }}
@@ -121,7 +121,7 @@ jobs:
         uses: foundry-rs/foundry-toolchain@v1
 
       - name: Cache cbrotli
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         id: cache-cbrotli
         with:
           path: |
